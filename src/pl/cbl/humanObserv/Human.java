@@ -6,6 +6,7 @@ public class Human implements HumanObs{
 
 	private String name;
 	private double health = 100;
+	private double toxicity = 0;
 	
 	
 	public String getName() {
@@ -24,17 +25,23 @@ public class Human implements HumanObs{
 		this.health = health;
 	}
 	
+	public double getToxicity() {
+		return toxicity;
+	}
+
+	public void setToxicity(double toxicity) {
+		this.toxicity = toxicity;
+	}
+
 	public Human() {}
 	
 	public Human(String name) {
 		this.name = name;
 	}
 	
-	
-	
 	@Override
 	public String toString() {
-		return "Human [name=" + name + ", health=" + health + "]";
+		return "Human [name=" + name + ", health=" + health + ", toxicity=" + toxicity +"]";
 	}
 
 	@Override
@@ -42,16 +49,15 @@ public class Human implements HumanObs{
 		Random random = new Random();
 		 health = health - (double)random.nextInt(5);
 		 this.setHealth(health);
-		 System.out.println("health value down "+health);
+		 System.out.println("health value down "+health + " "+this.getName());
 		
 	}
-
-	@Override
+	@Override 
 	public void upHealth(double health) {
 		Random random = new Random();
 		 health = health + (double)random.nextInt(5);
 		 this.setHealth(health);
-		 System.out.println("health value up "+health);
+		 System.out.println("health value up "+health+" "+this.getName());
 		
 	}
 }
