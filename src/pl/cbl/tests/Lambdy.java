@@ -1,10 +1,13 @@
 package pl.cbl.tests;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Lambdy {
 
@@ -41,6 +44,19 @@ public class Lambdy {
 		System.out.println("-----------");
 		showByWord(lista, book -> book.getAuthor().contains("zareba"));
 
+		Book bk = new Book("burka", "zareba", "czubki");
+		
+		Stream<Book> str = lista.stream().sorted();
+		Predicate<Book> pred = b -> b.equals(bk);
+		long count = lista.stream().filter(pred).count();
+		System.out.println(count);
+		
+		
+		List<Integer> numbs = Arrays.asList(1,2,3,4,5,6,7,8,9);
+		numbs = numbs.stream()
+				.filter(x->x%3==0)
+				.collect(Collectors.toList());
+		System.out.println(numbs);
 	}
 
 	private static <A> void iterateList(List<A> lista, Consumer<A> cons) {
@@ -59,7 +75,7 @@ public class Lambdy {
 		for (C book : list) {
 			if (pred.test(book)) {
 				System.out.println(book);
-				;
+				
 			}
 		}
 
