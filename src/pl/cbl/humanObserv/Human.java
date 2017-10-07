@@ -60,4 +60,16 @@ public class Human implements HumanObs{
 		 System.out.println("health value up "+health+" "+this.getName());
 		
 	}
+
+	@Override
+	public void drink(Drink drink) {
+		this.setToxicity(drink.getToxicLvl());
+		System.out.println("toxicity goes up for "+drink.getToxicLvl());
+	}
+	
+	
+	
+	
+	
+	
 }
