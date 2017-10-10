@@ -8,6 +8,7 @@ public class Human implements HumanObs{
 	private double health = 100;
 	private double toxicity = 0;
 	
+	DrinkFactory df = new DrinkFactory();
 	
 	public String getName() {
 		return name;
@@ -63,8 +64,9 @@ public class Human implements HumanObs{
 
 	@Override
 	public void drink(Drink drink) {
-		this.setToxicity(drink.getToxicLvl());
-		System.out.println("toxicity goes up for "+drink.getToxicLvl());
+		drink = df.makeDrink("Vodka");
+		this.setToxicity(drink.getToxicity());
+		System.out.println("toxicity goes up for " + drink.getToxicity());
 	}
 	
 	
