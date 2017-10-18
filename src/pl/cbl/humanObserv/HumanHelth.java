@@ -24,18 +24,13 @@ public class HumanHelth implements Runnable{
 			
 			if(human.getHealth()>90) {
 			human.downHealth(human.getHealth());
-			human.drink(dF.makeDrink("Vodka"));
+			human.drink(human.getToxicity());
 			}
 			else {
 			human.upHealth(human.getHealth());
 			}
 			
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
 			
 			
 			

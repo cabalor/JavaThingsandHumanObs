@@ -5,7 +5,7 @@ public interface HumanObs {
 	
 	public void downHealth(double health);
 	public void upHealth(double health);
-	public void drink(Drink drink);
+	public void drink(double tox);
 	
 	
 	

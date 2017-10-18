@@ -16,6 +16,7 @@ public class Drink {
 		Toxicity = Toxi;
 	}
 
+	Drink(){};
 	@Override
 	public String toString() {
 		return "Drink [Toxicity=" + Toxicity + "]";
