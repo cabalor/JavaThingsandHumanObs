@@ -30,7 +30,10 @@ public class HumanHelth implements Runnable{
 			human.upHealth(human.getHealth());
 			}
 			
-			
+			if(human.getToxicity() >=160) {
+				System.out.println("you are dead, you drunk to much ;)");
+				break;
+			}
 			
 			
 			
