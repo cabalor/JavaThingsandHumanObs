@@ -76,7 +76,7 @@ public class Human implements HumanObs{
 		}
 		toxi = toxi + dr.getToxicity();
 		this.setToxicity(toxi);
-		System.out.println("toxicity goes up for " + dr.getToxicity()+"\n toxi is now "+ toxi);
+		System.out.println("toxicity goes up for " + dr.getToxicity()+"\n toxi is now "+ toxi+"\n-----------");
 	}
 	
 	
