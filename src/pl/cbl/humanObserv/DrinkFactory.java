@@ -17,6 +17,10 @@ public class DrinkFactory {
 		return new Wine(10);	
 		}
 		
+		if(drink == "Beer") {
+			return new Beer(5);	
+			}
+		
 		
 		return null;
 		

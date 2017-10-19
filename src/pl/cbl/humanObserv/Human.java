@@ -65,12 +65,14 @@ public class Human implements HumanObs{
 	@Override
 	public void drink(double toxi) {
 		Random rnd = new Random();
-		int x = rnd.nextInt(7);
+		int x = rnd.nextInt(9)+1;
 		Drink dr = new Drink();
 		if(x<=3) {
 		dr = df.makeDrink("Vodka");}
-		else {
+		else if (x>3 && x<=6){
 			dr = df.makeDrink("Wine");
+		} else if(x>6 && x<=9) {
+			dr = df.makeDrink("Beer");
 		}
 		toxi = toxi + dr.getToxicity();
 		this.setToxicity(toxi);
