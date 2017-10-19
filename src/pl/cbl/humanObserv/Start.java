@@ -13,8 +13,9 @@ public class Start{
 	public static void main(String[] args) {
 
 		Scanner scn = new Scanner(System.in);
+		List<Human> list = new ArrayList<>();
 		while(true) {
-			List<Human> list = new ArrayList<>();
+			
 		System.out.println("welcome to drink game");
 		System.out.println("hit 1 to add a player, hit 2 to exit, hit 3 to show player list, hit 4 to start the game");
 		String s = scn.nextLine();
@@ -26,7 +27,9 @@ public class Start{
 			System.exit(2);
 			
 		}else if(s.equals("3")) {
-			System.out.println(list.iterator());
+			for(Human hum:list) {
+				System.out.println(hum);
+			}
 			
 		}
 			
