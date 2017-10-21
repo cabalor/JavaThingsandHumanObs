@@ -56,11 +56,19 @@ public class Start {
 	public static void game(List<Human> players, Scanner scn) {
 		int limit = players.size();
 		boolean gameOn = true;
+		DrinkFactory df = new DrinkFactory();
 		String s;
 		while(gameOn ==true) {
 			for(int i=0;i<limit;i++) {
-				System.out.println(players.get(i).getName()+" choose drink from list");
+				System.out.println(players.get(i).getName()+" choose drink from list: \n vodka, \n beer, \n wine");
 				s = scn.nextLine();
+				Drink dr = new Drink();
+					dr =	df.makeDrink(s);
+				/*System.out.println(dr.toString());
+				players.get(i).drink(players.get(i).getToxicity());
+				
+				players.get(i).setToxicity(dr.getToxicity());
+				players.get(i).getToxicity();*/
 			}
 			
 			
