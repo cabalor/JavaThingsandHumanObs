@@ -60,15 +60,19 @@ public class Start {
 		String s;
 		while(gameOn ==true) {
 			for(int i=0;i<limit;i++) {
-				System.out.println(players.get(i).getName()+" choose drink from list: 1 for vodka, 2 for beer, 3 for wine");
+				System.out.println(players.get(i).getName()+" choose drink from list: V for Vodka, B for beer, W for wine");
 				s = scn.nextLine();
-				Drink dr = new Drink();
-					dr =	df.makeDrink(s);
+				System.out.println(s);
+				Drink dr =    df.makeDrink(s);      //new Drink();
+				System.out.println(dr.Toxicity);
 				
-				players.get(i).setToxicity(dr.getToxicity());
+				//	dr =	df.makeDrink(s);
+				//System.out.println(dr.toString());
 				
 				//players.get(i).setToxicity(dr.getToxicity());
-				System.out.println(players.get(i).getToxicity());
+				
+				//players.get(i).setToxicity(dr.getToxicity());
+				//System.out.println(players.get(i).getToxicity());
 			}
 			
 			
