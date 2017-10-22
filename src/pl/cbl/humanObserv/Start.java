@@ -58,27 +58,25 @@ public class Start {
 		boolean gameOn = true;
 		DrinkFactory df = new DrinkFactory();
 		String s;
-		while(gameOn ==true) {
-			for(int i=0;i<limit;i++) {
-				System.out.println(players.get(i).getName()+" choose drink from list: V for Vodka, B for beer, W for wine");
+		while (gameOn == true) {
+			for (int i = 0; i < limit; i++) {
+				System.out.println(
+						players.get(i).getName() + " choose drink from list: V for Vodka, B for beer, W for wine");
 				s = scn.nextLine();
 				System.out.println(s);
-				Drink dr =    df.makeDrink(s);      //new Drink();
+				Drink dr = df.makeDrink(s);
 				System.out.println(dr.Toxicity);
-				
-				//	dr =	df.makeDrink(s);
-				//System.out.println(dr.toString());
-				
-				//players.get(i).setToxicity(dr.getToxicity());
-				
-				//players.get(i).setToxicity(dr.getToxicity());
-				//System.out.println(players.get(i).getToxicity());
+
+				// dr = df.makeDrink(s);
+				// System.out.println(dr.toString());
+
+				// players.get(i).setToxicity(dr.getToxicity());
+
+				// players.get(i).setToxicity(dr.getToxicity());
+				// System.out.println(players.get(i).getToxicity());
 			}
-			
-			
-			
+
 		}
-		
-		
+
 	}
 }
