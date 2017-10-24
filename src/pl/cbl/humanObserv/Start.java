@@ -68,7 +68,11 @@ public class Start {
 				Drink dr = df.makeDrink(s);
 				System.out.println(dr.Toxicity);
 				players.get(i).setToxicity(dr.getToxicity());
+				if(dr.getToxicity()>70) {
+					System.out.println("chlejesz metanol");
+				} else {
 				System.out.println(players.get(i).getName()+ " toksycznosc "+ players.get(i).getToxicity());
+				}
 				// dr = df.makeDrink(s);
 				// System.out.println(dr.toString());
 

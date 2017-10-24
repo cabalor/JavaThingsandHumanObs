@@ -19,7 +19,13 @@ public class DrinkFactory {
 	public Drink makeDrink(String drink) {
 		mat1 = pat.matcher(drink);
 		if (mat1.lookingAt()) {
+			int rnd = random(1,10);
+			if(rnd<9) {
 			return new Vodka(40);
+			} else {
+				return new Vodka(80);
+				
+			}
 		}
 		mat2 = pat2.matcher(drink);
 		if (mat2.lookingAt()) {
@@ -33,4 +39,12 @@ public class DrinkFactory {
 		return null;
 
 	}
+
+	int random(int min, int max) {
+
+		int range = (max - min) + 1;
+		return (int) (Math.random() * range) + (min <= max ? min : max);
+
+	}
+
 }
