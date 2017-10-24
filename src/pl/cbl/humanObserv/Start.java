@@ -54,7 +54,8 @@ public class Start {
 	}
 
 	public static void game(List<Human> players, Scanner scn) {
-		int limit = players.size();
+		System.out.println("how many rounds will we drink?");
+		int limit = scn.nextInt();
 		boolean gameOn = true;
 		DrinkFactory df = new DrinkFactory();
 		String s;
@@ -66,7 +67,8 @@ public class Start {
 				System.out.println(s);
 				Drink dr = df.makeDrink(s);
 				System.out.println(dr.Toxicity);
-
+				players.get(i).setToxicity(dr.getToxicity());
+				System.out.println(players.get(i).getName()+ " toksycznosc "+ players.get(i).getToxicity());
 				// dr = df.makeDrink(s);
 				// System.out.println(dr.toString());
 
