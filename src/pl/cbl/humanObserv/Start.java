@@ -61,9 +61,10 @@ public class Start {
 		DrinkFactory df = new DrinkFactory();
 		String s;
 		while (gameOn == true) {
-			for (int i = 0; i < limit; i++) {
-				for (int j = 0; j < players.size() * limit; j++) {
+			for (int i = 1; i <= limit; i++) {
+				for (int j = 0; j < players.size(); j++) {
 					System.out.println("Round " + i);
+					System.out.println("wewnetrzne "+j);
 				System.out.println(
 						players.get(j).getName() + " choose drink from list: V for Vodka, B for beer, W for wine");
 				s = scn.nextLine();
@@ -74,8 +75,12 @@ public class Start {
 				if (dr.getToxicity() > 70) {
 					System.out.println("chlejesz metanol");
 				} else {
-					System.out.println(players.get(j).getName() + " toksycznosc " + players.get(i).getToxicity());
+					System.out.println(players.get(j).getName() + " toksycznosc " + players.get(j).getToxicity());
 				}
+				
+				}
+				if(i==limit) {
+					gameOn=false;
 				}
 			}
 
