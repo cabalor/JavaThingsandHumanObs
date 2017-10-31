@@ -19,21 +19,33 @@ public class DrinkFactory {
 	public Drink makeDrink(String drink) {
 		mat1 = pat.matcher(drink);
 		if (mat1.lookingAt()) {
-			int rnd = random(1,10);
-			if(rnd<9) {
-			return new Vodka(40);
+			int rnd = random(1, 10);
+			if (rnd < 8) {
+				return new Vodka(40);
 			} else {
 				return new Vodka(80);
-				
+
 			}
 		}
 		mat2 = pat2.matcher(drink);
 		if (mat2.lookingAt()) {
-			return new Wine(10);
+			int rnd = random(1, 10);
+			if (rnd < 8) {
+				return new Wine(12);
+			} else {
+				return new Vodka(18);
+
+			}
 		}
 		mat3 = pat3.matcher(drink);
 		if (mat3.lookingAt()) {
-			return new Beer(5);
+			int rnd = random(1, 10);
+			if (rnd < 8) {
+				return new Beer(5);
+			} else {
+				return new Beer(10);
+
+			}
 		}
 
 		return null;
