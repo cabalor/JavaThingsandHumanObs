@@ -1,4 +1,4 @@
-package bb;
+package pl.cbl.tests;
 
 import java.util.concurrent.SynchronousQueue;
 
