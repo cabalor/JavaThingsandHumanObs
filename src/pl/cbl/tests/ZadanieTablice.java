@@ -82,22 +82,34 @@ public class ZadanieTablice {
 			}
 			ind2++;
 		}
-		
+		System.out.println("/n");
 		for(int i=0;i<tab6.length;i++) {
 			for(int j=0;j<tab6[i].length;j++) {
-				System.out.print("\n"+tab6[i][j]+" ");
+				System.out.print(tab6[i][j]+" ");
+				
+			}
+		}
+		System.out.println("\n");
+		int tab7[][] = new int[3][3];
+		int ind3 =0;
+		int ind4 =0;
+		for(int i = teb5.length-1;i>=0;i--) {
+			for(int j=teb5[i].length-1;j>=0;j--) {
+				tab7[ind3][ind4] = teb5[i][j];
+				ind4++;
+			}
+			ind3++;
+			ind4=0;
+		}
+		
+		for(int i=0;i<tab7.length;i++) {
+			for(int j=0;j<tab7[i].length;j++) {
+				System.out.print(tab7[i][j]+" ");
 				
 			}
 		}
 		
-		int tab7[][] = new int[3][3];
-		int ind3 =0;
-		for(int i = tab7.length-1;i>=0;i--) {
-			for(int j=tab7.length-1;j<teb5[i].length;j++) {
-				tab6[ind2][j] = teb5[i][j];
-			}
-			ind2++;
-		}
+		
 		
 		
 	}
