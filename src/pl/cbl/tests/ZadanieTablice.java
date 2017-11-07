@@ -109,8 +109,28 @@ public class ZadanieTablice {
 			}
 		}
 		
+		System.out.println("==============z6===============");
+		
+		/*int tab8[];
+		System.out.println(tab8); error not initialized*/
 		
 		
+		System.out.println("==============z7==========");
+		
+		/*int tab9[] = {789, 678, 567};
+		
+		for(int i=0; i<tab9.length; i++) {
+			for(int j =i; j<tab.length;j++) {
+				System.out.println(tab9[i]-tab9[j]);
+			}
+		}*/
+		System.out.println("========z8=======");
+		
+		int tab10[][]= {
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+		};
 		
 	}
 	
