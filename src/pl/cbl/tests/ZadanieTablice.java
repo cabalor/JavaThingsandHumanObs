@@ -131,8 +131,32 @@ public class ZadanieTablice {
 				{0,1,0},
 				{0,0,1}
 		};
-		
+		System.out.println(check(tab10));
 	}
+
+	
+	
+	
+public static boolean check(int [][] tabi) {
+	
+	int check = (tabi.length * tabi[0].length)/tabi.length;
+	int count =0;
+	for(int i=0; i<tabi.length;i++) {
+		for(int j = 0; j<tabi[i].length;j++) {
+			if(i == j && tabi[i][j]==1) {
+				count ++;
+			}
+			if(i!=j&&tabi[i][j]!=0) {
+				return false;
+			}
+		}
+	}
+	 if(check==count) {
+		return true;
+	}
+	 return false;
+}
+	
 	
 	
 	
