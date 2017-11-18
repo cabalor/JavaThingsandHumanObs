@@ -150,10 +150,9 @@ public class ZadanieTablice {
 				tab44[i][j] = (int) (Math.random() * 10);
 			}
 		}
-		int[][] tab55 = { { 1, 1 }, { 1, 4 } };
+		int[][] tab55 = { { 1, 1, 2 }, { 0, 2, 5 }, { 2, 6, 7 } };
 
-		checkDiagonal(tab44);
-		evenSum(tab55);
+		checkDiagonal(tab55);
 		evenS(tab44);
 	}
 
@@ -178,68 +177,41 @@ public class ZadanieTablice {
 	}
 
 	public static boolean checkDiagonal(int[][] tab) {
-		List<Integer> lista = new ArrayList<>();
+		int found = 0;
 		for (int i = 0; i < tab.length; i++) {
-			for (int j = 0; j < tab[i].length; j++) {
-				if (i == j) {
-					lista.add(tab[i][j]);
+			for (int j = i + 1; j < tab.length; j++) {
+				if (tab[i][i] == tab[j][j]) {
+					found++;
+				} else if (tab[i][tab.length - 1 - i] == tab[j][tab.length - 1 - j]) {
+					found++;
 				}
 			}
 		}
-		System.out.println(lista.size());
-
+		System.out.println("mamy " + found + " trafien ");
 		return true;
 	}
 
-	
-	
-	public static boolean evenSum(int[][] tab) {
-		int sumaW = 0;
-		int sumaK = 0;
-		int check = 0;
+	public static boolean evenS(int[][] tab) {
+		int[] sum1 = new int[tab.length];
+		int[] sum2 = new int[tab.length];
+
 		for (int i = 0; i < tab.length; i++) {
-			for (int j = 0; j < tab[i].length; j++) {
-				sumaW = sumaW + tab[i][j];
-				sumaK = sumaK + tab[j][i];
+			for (int j = 0; j < tab.length; j++) {
+				sum1[i] = sum1[i] + tab[i][j];
+				sum2[i] = sum2[i] + tab[j][i];
 			}
-			System.out.println("sssss " + sumaW);
-			System.out.println("kkkk " + sumaK);
-			if (sumaW == sumaK) {
-				System.out.println("wiersz jest rowny kolumnie");
-				check++;
+		}
+		System.out.println("s1 " + Arrays.toString(sum1) + " sum2 " + Arrays.toString(sum2));
+
+		for (int i = 0; i < tab.length; i++) {
+			for (int j = 0; j < tab.length; j++) {
+				if (sum1[i] == sum2[j]) {
+					System.out.println("suma jest taka sama dla w " + i + " k " + j);
+				}
 			}
-			sumaK = 0;
-			sumaW = 0;
 		}
-		if (check > 0) {
-			System.out.println("byly rowne kolumny w liczbie " + check);
-			return true;
-		}
-		System.out.println("nie ma rownych kolumn");
+
 		return false;
 	}
 
-	public static boolean evenS(int[][] tab) {
-		int sum1=0;
-		int sum2=0;
-		
-		for(int i=0; i<tab.length;i++) {
-			for(int j=0; j<tab.length;j++) {
-				sum1 = sum1 + tab[i][j];
-				sum2 = sum2 + tab[j][i];
-			}
-		}
-		
-		System.out.println("s1 "+sum1+" sum2 "+sum2);
-		
-		
-		return false;
-		
-		
-		
-	}
-	
-	
-	
-	
 }
