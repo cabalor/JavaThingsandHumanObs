@@ -22,6 +22,13 @@ public class Z8 {
 
 		fillRow(tabik, 0, 5);
 		fillCol(tabik,0,5);
+		
+		Number num = new Number();
+		num.setNumber(7);
+		Methods.ReturnValue(num);
+		Methods.ReturnValue(num);
+		
+		
 	}
 
 	public static void show(int i) {
@@ -67,6 +74,36 @@ public class Z8 {
 				
 			}
 		}
+	
+	
+	public static void RowFromTo(int[][] tab, int row, int from, int to, int val) {
+		for (int i = 0; i < tab.length; i++) {
+			for (int j = 0; j < tab[i].length; j++) {
+				if (i == row ) {
+					if(j>=from && j==to) {
+					tab[i][j] = val;
+					}
+				}
+				System.out.println(tab[i][j]+ " "); 
+			}
+		}
+	}
+	
+	
+	public static void ColFromTl(int[][] tab, int col,int from, int to, int val) {
+		for (int i = 0; i < tab.length; i++) {
+			for (int j = 0; j < tab[i].length; j++) {
+				if(j==col) {
+					if(i>=from&&i<=to) {
+					tab[i][j]=val;
+					}
+				}
+				System.out.println(tab[i][j]+" ");
+				}
+				
+			}
+		}
+	
 
 	}
 	
