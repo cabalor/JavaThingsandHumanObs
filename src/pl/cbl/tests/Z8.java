@@ -22,11 +22,17 @@ public class Z8 {
 
 		fillRow(tabik, 0, 5);
 		fillCol(tabik,0,5);
-		
+		System.out.println("------z4 iz5");
 		Number num = new Number();
 		num.setNumber(7);
 		Methods.ReturnValue(num);
 		Methods.ReturnValue(num);
+		System.out.println("-------z6--------");
+		LiczbyZespolone zesp = new LiczbyZespolone(2, 5);
+		double dupa = LiczbyZespolone.dodaj(zesp);
+		System.out.println(dupa);
+		LiczbyZespolone.show(zesp);
+		
 		
 		
 	}
