@@ -8,6 +8,16 @@ public class Main2 {
 		B b = new B();
 		b.show();
 		
+		KulaW kw = new KulaW();
+		
+		Kwadrat k = new Kwadrat(6);
+		
+		kw.set(k);
+		
+		kw.k.show(k);
+		System.out.println(kw);
+		
+		
 
 	}
 

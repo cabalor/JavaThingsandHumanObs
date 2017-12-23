@@ -19,5 +19,10 @@ public class Walec {
 	 
  }
 
+	@Override
+	public String toString() {
+		return "Walec [promien=" + promien + ", wysokosc=" + wysokosc + "]";
+	}
+
 	
 }

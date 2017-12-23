@@ -27,6 +27,10 @@ public class Kwadrat {
 		System.out.println("pbjetsc walca "+(Math.PI*((k.bok*k.bok)*k.w.wysokosc)));
 		System.out.println("dane walca umieszczonego w szescianie wysokosc "+ k.w.wysokosc + " promien "+k.bok);
 	}
+	@Override
+	public String toString() {
+		return "Kwadrat [bok=" + bok + ", w=" + w + "]";
+	}
 	
 	
 }
