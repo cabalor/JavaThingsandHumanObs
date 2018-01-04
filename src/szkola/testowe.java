@@ -1,4 +1,5 @@
-package pl.net.bluesoft.testranger.util;
+package szkola;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,6 +26,11 @@ public class testowe {
         emps.add(jon);
         emps.add(jan);
 
+        
+        AndClass and = new AndClass();
+        String s = and.smth();
+        System.out.println(s);
+        
 
 //        Collections.sort(emps, new Comparator<emp>() {
 //            @Override
@@ -51,7 +57,9 @@ public class testowe {
 //        System.out.println(sill);
 
 
-        UpConcat uc = (s1, s2) -> s1.toUpperCase()+s2.toUpperCase();
+        UpConcat uc = (s1, s2) -> {String res = s1.toUpperCase()+s2.toUpperCase();
+        return res;
+        };
 
         String sill = doString(uc, emps.get(0).getName(), emps.get(1).getName());
 
@@ -101,3 +109,36 @@ class emp{
 interface UpConcat{
     public String upAndConcat(String s1, String s2);
 }
+
+class AndClass{
+	
+	public String smth() {
+		/*System.out.println("nowa klasa name "+getClass().getSimpleName());
+		return testowe.doString(new UpConcat() {
+			
+			@Override
+			public String upAndConcat(String s1, String s2) {
+				System.err.println("anonimowa klasa "+getClass().getSimpleName());
+				return s1.toUpperCase() + s2.toUpperCase();
+			}
+		}, "str1", "str2");*/
+		UpConcat uc = (s1, s2) -> {
+			System.out.println("lambda lambda "+getClass().getSimpleName());
+			String res = s1.toUpperCase() + s2.toUpperCase();
+			return res;
+		};
+		System.out.println("and class "+getClass().getSimpleName());
+		return testowe.doString(uc, "str1", "sttr2");
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
