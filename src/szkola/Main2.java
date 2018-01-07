@@ -1,5 +1,7 @@
 package szkola;
 
+import java.util.Arrays;
+
 public class Main2 {
 
 	public static void main(String[] args) {
@@ -18,7 +20,16 @@ public class Main2 {
 		System.out.println(kw);
 		
 		
-
+		KulaNa ns = new KulaNa(new Kwadrat(5));
+		String str = "ala ma kota";
+		
+		System.out.println(str.charAt(4)+ " " +str.charAt(2));
+		
+		System.out.println(str.indexOf("k"));
+		System.out.println(str.length());
+		String[] tab = str.split(" ");
+		System.out.println(Arrays.toString(tab));
+		
 	}
 
 }

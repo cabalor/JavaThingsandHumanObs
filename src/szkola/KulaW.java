@@ -2,8 +2,8 @@ package szkola;
 
 public class KulaW {
 	
-	Kwadrat k;
-	Walec w;
+	public Kwadrat k;
+	public Walec w;
 	
 	public KulaW(Kwadrat kwa){
 		k = kwa;
