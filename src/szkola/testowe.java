@@ -25,7 +25,28 @@ public class testowe {
         List<emp> emps = new ArrayList<>();
         emps.add(jon);
         emps.add(jan);
-
+        
+        emps.forEach(emp -> {
+        	System.out.println(emp.getName());
+        	System.out.println(emp.getAge());
+        });
+        
+        
+        
+        for(emp e: emps) {
+        	System.out.println(e.getName());
+        	System.out.println(e.getAge());
+        	new Thread(() -> System.out.println(e.getAge())).start();
+        }
+        System.out.println("-----------");
+        for(int i=0; i<emps.size(); i++) {
+        	emp emp = emps.get(i);
+        	System.out.println(emp.getName());
+        	new Thread(() -> System.out.println(emp.getAge())).start();
+        }
+        
+        
+        
         
         AndClass and = new AndClass();
         String s = and.smth();
@@ -113,6 +134,7 @@ interface UpConcat{
 class AndClass{
 	
 	public String smth() {
+		int i =0;
 		/*System.out.println("nowa klasa name "+getClass().getSimpleName());
 		return testowe.doString(new UpConcat() {
 			
@@ -124,14 +146,37 @@ class AndClass{
 		}, "str1", "str2");*/
 		UpConcat uc = (s1, s2) -> {
 			System.out.println("lambda lambda "+getClass().getSimpleName());
+			System.out.println("lambda i = " + i);
 			String res = s1.toUpperCase() + s2.toUpperCase();
 			return res;
 		};
+		
+	
+		
 		System.out.println("and class "+getClass().getSimpleName());
 		return testowe.doString(uc, "str1", "sttr2");
 	}
 	
+	
+	public void dawajvalue(){
+		int number = 25;
+		
+		Runnable r = () -> {
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println("The value is "+number);
+		};
+		
+		
+		new Thread(r).start();
+	}
+	
+	
 }
+
 
 
 
