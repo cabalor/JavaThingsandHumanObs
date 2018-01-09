@@ -2,7 +2,11 @@ package szkola;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.function.Function;
+import java.util.function.IntPredicate;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class NoweLambdy {
 
@@ -34,6 +38,52 @@ public class NoweLambdy {
 	        
 	        printWorkeryAge(work, "dupka dupka", w -> w.getAge() > 30);
 	        printWorkeryAge(work, "mloda upka", g -> g.getAge() < 30);
+	        
+	        printWorkeryAge(work, "mlodsi niz 25", new Predicate<Workery>() {
+
+				@Override
+				public boolean test(Workery t) {					
+					return t.getAge()<25;
+				}
+	        	
+	        });
+	        
+	        IntPredicate intPred = i -> i >15;
+	        IntPredicate wiecej = i -> i < 100;
+	        
+	        System.out.println(intPred.test(10));
+	        
+	        int a = 20;
+	        System.out.println(intPred.test(a +5));
+	        
+	        System.out.println(intPred.and(wiecej).test(a));
+	        
+	        
+	        Random rnd = new Random();
+	        Supplier<Integer> randSup = () -> rnd.nextInt(10);
+	        
+	        for(int i=0; i<10; i++) {
+	        	System.out.println(randSup.get());
+	        }
+	        
+	        work.forEach(w -> {
+	        	String nazwisko = w.getName().substring(w.getName().indexOf(' ') + 1);
+	        	System.out.println("naziwsko " + nazwisko);
+	        });
+	        
+	        Function<Workery, String> nazwa = ( Workery worker) -> {
+	        	return worker.getName().substring(worker.getName().indexOf(' ') + 1);
+	        };
+	        
+	        String nazwisk2 = nazwa.apply(work.get(1));
+	        System.out.println(nazwisk2);
+	        
+	        
+	        Function<Workery, String> imie = (Workery worker) -> {
+	        	return worker.getName().substring(0, worker.getName().indexOf(' '));
+	        };
+	        
+	        
 	        
 	        
 //	        work.forEach(wo -> {
