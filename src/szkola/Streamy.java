@@ -3,6 +3,7 @@ package szkola;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -58,30 +59,30 @@ public class Streamy {
 			System.out.println(numb);
 		}
 				
+		List<String> sortetNumbers2 = BingoNumb.stream()
+				.map(String::toUpperCase)
+				.filter(s -> s.startsWith("B"))
+				.sorted()
+				.collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+		
+		Map<Integer, List<Ludzik>> poWieku = miejsca.stream()
+				.flatMap(miejsce -> miejsce.getLudzik().stream())
+				.collect(Collectors.groupingBy(ludzik -> ludzik.getHp()));
+		
+		miejsca.stream()
+		.flatMap( mie -> mie.getLudzik().stream())
+		.reduce((l1, l2) -> l1.getHp() < l2.getHp() ? l1 : l2)
+		.ifPresent(System.out::println);
 		
 		
+		Stream.of("aac", "baa", "abc", "sr", "ser")
+		.filter(s -> {
+			System.out.println(s);
+			return s.length() == 3;
+		}).count();
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		
 		BingoNumb.forEach(liczby -> {
 			if (liczby.toUpperCase().startsWith("B")) {
