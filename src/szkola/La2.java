@@ -1,5 +1,8 @@
 package szkola;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -47,6 +50,42 @@ public class La2 {
 		
 		String supik = sup.get();
 		System.out.println(supik);
+		
+		
+		
+		List<String> nazwy = Arrays.asList("rzeka", "stolek", "auto", "drzewo", "kaczka", "trawa", 
+				"tratwa", "wozek","arka","wiadro");
+		
+		List<String> upperCase = new ArrayList<>();
+		nazwy.forEach(n -> upperCase.add(n.substring(0, 1).toUpperCase()+n.substring(1)));
+		upperCase.sort((s1, s2) -> s1.compareTo(s2));
+		upperCase.forEach( s -> System.out.println(s));
+		
+		List<String> upperCase2 = new ArrayList<>();
+		nazwy.forEach(n -> upperCase2.add(n.substring(0, 1).toUpperCase()+n.substring(1)));
+		upperCase2.sort(String::compareTo);
+		upperCase2.forEach(System.out::println);
+		
+		List<String> upperCase3 = new ArrayList<>();
+		
+		nazwy.stream()
+			 .map(n -> n.substring(0, 1).toUpperCase() + n.substring(1))
+			 .sorted(String::compareTo)
+			 .forEach(System.out::println);
+		
+		int count = (int)nazwy.stream()
+				 .map(n -> n.substring(0, 1).toUpperCase() + n.substring(1))
+				 .filter(x -> x.startsWith("w"))
+				 .count();
+		
+		nazwy.stream()
+		 .map(n -> n.substring(0, 1).toUpperCase() + n.substring(1))
+		 .peek(System.out::println)
+		 .sorted(String::compareTo)
+		 .count();
+		 
+		
+		
 		
 		
 		
