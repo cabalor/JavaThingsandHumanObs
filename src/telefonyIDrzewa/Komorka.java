@@ -1,30 +1,65 @@
 package telefonyIDrzewa;
 
+import java.util.Arrays;
+
 public class Komorka extends Telefon {
 
-	String[] polaczenia = new String[11];
-	
-	public Komorka(String interfesKomunikacyjny, String kolor, String[] calls) {
-		super(interfesKomunikacyjny, kolor);
-		polaczenia = calls;
-		
+	protected String[] polaczenia = new String[10];
+	public String[] getPolaczenia() {
+		return polaczenia;
 	}
 
-	public String[] polaczenia(String[] tab) {
-	String[] telefony = new String[10];	
-	if(tab[9]!=null && tab[10]==null) {
-			telefony = copy(tab);
+	public void setPolaczenia(String[] polaczenia) {
+		this.polaczenia = polaczenia;
 	}
-	return telefony;
-	}
-	
-	public String[] copy(String[] tab) {
-		String[] tabi = new String[11];
-		for(int i=0;i<9;i++) {
-			tabi[i]=tab[i];
-		}
-		return tabi;
+
+
+	private int i = 0;
+	public Komorka(String interfesKomunikacyjny, String kolor) {
+		super(interfesKomunikacyjny, kolor);
 		
 	}
+	
+	void zadzwon(String numer) {
+		super.zadzwon(numer);
+		dodaniePolaczenia(numer);
+	}
+	
+	
+	private void dodaniePolaczenia(String numer) {
+		if(i >= this.polaczenia.length) {
+			this.polaczenia = copy(this.polaczenia);
+			this.polaczenia[this.polaczenia.length-1] = numer;
+		} else {
+		this.polaczenia[i] = numer;
+		this.i++;
+		}
+	}
+
+	
+	private String[] copy(String[] tab) {
+		String[] tabi = new String[tab.length];
+		for(int i=0;i<tab.length-1;i++) {
+			tabi[i]=tab[i+1];
+		}
+		return tabi;
+	}
+
+	@Override
+	void showConnectionHitory() {
+		System.out.println("historia polaczen");
+		for(String s: this.polaczenia) {
+			System.out.println("polaczenie " + s);
+		}
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Komorka [polaczenia=" + Arrays.toString(polaczenia) + ", interfesKomunikacyjny=" + interfesKomunikacyjny
+				+ ", kolor=" + kolor + "]";
+	}
+	
+	
 	
 }

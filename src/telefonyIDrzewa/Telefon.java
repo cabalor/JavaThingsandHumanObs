@@ -5,10 +5,6 @@ public class Telefon {
 	String interfesKomunikacyjny;
 	String kolor;
 
-	@Override
-	public String toString() {
-		return "Telefon [interfesKomunikacyjny=" + interfesKomunikacyjny + ", kolor=" + kolor + "]";
-	}
 
 	public Telefon(String interfesKomunikacyjny, String kolor) {
 		this.interfesKomunikacyjny = interfesKomunikacyjny;
@@ -16,7 +12,22 @@ public class Telefon {
 	}
 
 	void zadzwon(String numer) {
-		System.out.println(numer);
+		System.out.println("dzwonie " + numer);
+	}
+	
+	void showConnectionHitory() {
+		System.out.println("call history not available");
+	}
+	
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Telefon [interfesKomunikacyjny=" + interfesKomunikacyjny + ", kolor=" + kolor + "]";
 	}
 
+	
+	
+	
 }
