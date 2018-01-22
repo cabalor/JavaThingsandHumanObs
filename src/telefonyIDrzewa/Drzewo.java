@@ -1,6 +1,6 @@
 package telefonyIDrzewa;
 
-public class Drzewo {
+public class Drzewo{
 
 	boolean wiecznieZzielone;
 	int wysokosc;

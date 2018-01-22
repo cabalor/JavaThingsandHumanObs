@@ -5,9 +5,8 @@ public class Rakieta {
 	String nazwa;
 	int wagaPaliwa;
 
-	Rakieta(String nazwa, int waga) {
+	Rakieta(String nazwa) {
 		this.nazwa = nazwa;
-		wagaPaliwa = waga;
 	}
 
 	@Override
@@ -20,11 +19,11 @@ public class Rakieta {
 		
 	}
 	
-	public void start() throws Exception {
+	public void start() throws ZaMaloPaliwaException {
 		if(wagaPaliwa < 50) {
 			throw new ZaMaloPaliwaException();
 		} else {
-			System.out.println("rakieta moze startowac");
+			System.out.println(this + "rakieta moze startowac");
 		}
 	}
 	
