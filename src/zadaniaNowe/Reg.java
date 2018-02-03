@@ -79,7 +79,6 @@ public class Reg {
 		try {
 			in = new FileInputStream("text.txt");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		String text = "";
@@ -92,7 +91,6 @@ public class Reg {
 				
 			}
 		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch ( IOException e) {
 			e.printStackTrace();
