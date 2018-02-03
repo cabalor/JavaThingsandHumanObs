@@ -1,4 +1,4 @@
-package bb;
+package szkola;
 
 public class Wyjatek extends Exception{
 	
