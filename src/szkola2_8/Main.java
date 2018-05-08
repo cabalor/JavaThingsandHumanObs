@@ -22,41 +22,35 @@ public class Main extends JFrame {
 
 	private Router router;
 	private JPanel centerPanel;
+	private JPanel rightPanel;
 
 	public Main() {
-
 		router = new Router();
 		setLayout(new BorderLayout());
 		initLeftPanel();
 		initCenterPanel();
 		initRightPanel();
-		// inicjalizacja lewego panelu
-		// inicjalizacja środkowego panelu
-		// inicjalizacja prawego panelu
-
+		pack();
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
-		pack();
 	}
 
 	private void initLeftPanel() {
-
 		JPanel panel = new JPanel();
-		
-		
+		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+		add(panel, BorderLayout.WEST);
 		for (String name : router.views.keySet()) {
 			JButton jbutton = new JButton(name);
 			jbutton.addActionListener(new ActionListener() {
 				@Override
-				
 				public void actionPerformed(ActionEvent arg0) {
 					centerPanel.removeAll();
-					if("Chat".equals(name)) {
-						czat();
-					} else {
-						initRightPanel();
+					rightPanel.removeAll();
+					for (JComponent element : router.views2.get(name)) {
+						rightPanel.add(element);
 					}
+					
 					for (JComponent element : router.views.get(name)) {
 						centerPanel.add(element);
 					}
@@ -66,17 +60,15 @@ public class Main extends JFrame {
 			panel.add(jbutton);
 			panel.setBackground(new Color(103, 58, 183));
 		}
-
-		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-		add(panel, BorderLayout.WEST);
 	}
 
 	private void initCenterPanel() {
 		centerPanel = new JPanel();
-		
-		JList lista = new JList(new MyListModel());
+		/*JList lista = new JList(new MyListModel());
 		JScrollPane scroll = new JScrollPane(lista);
-		centerPanel.add(scroll);
+		centerPanel.add(scroll);*/
+		centerPanel.add(new JLabel("Witaj"));
+		centerPanel.add(new JLabel("przybyszu!"));
 		add(centerPanel, BorderLayout.CENTER);
 	}
 
@@ -91,30 +83,27 @@ public class Main extends JFrame {
 		add(panel, BorderLayout.EAST);
 		return panel;
 	}
-	
-	
-	
-	public JPanel initRightPanel() {
-		JPanel panel = new JPanel();
-		panel.setLayout(new BorderLayout());
+
+	private void initRightPanel() {
+		rightPanel = new JPanel();
+		rightPanel.setLayout(new BorderLayout());
 		ImageIcon image = new ImageIcon("pjatk.png");
 		JPanel panel2 = new JPanel();
 		panel2.setLayout(new GridLayout(2, 2));
-		panel.setBackground(new Color(103, 58, 183));
+		rightPanel.setBackground(new Color(103, 58, 183));
 		JLabel label = new JLabel(image);
-		add(panel, BorderLayout.EAST);
-		panel.add(label);
-		panel.add(panel2, BorderLayout.SOUTH);
+		add(rightPanel, BorderLayout.EAST);
+		rightPanel.add(label);
+		rightPanel.add(panel2, BorderLayout.SOUTH);
 		JLabel label2 = new JLabel("imie");
 		JLabel label3 = new JLabel("nazwisko");
-		JLabel label4 = new JLabel("krycha");
+		JLabel label4 = new JLabel("krysia");
 		JLabel label5 = new JLabel("w");
 		panel2.add(label2);
 		panel2.add(label3);
 		panel2.add(label4);
 		panel2.add(label5);
 		panel2.setBackground(new Color(103, 58, 190));
-		panel.setBorder(new EmptyBorder(10, 10, 10, 10));
-		return panel;
+		rightPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 	}
 }
