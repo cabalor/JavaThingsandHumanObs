@@ -12,7 +12,7 @@ class MyListModel extends DefaultListModel<String> {
 	
 	public MyListModel() {
 		lista.add("marek");
-		lista.add("pojarek");
+		lista.add("darek");
 		lista.add("robert");
 	}
 	

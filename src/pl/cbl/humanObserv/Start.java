@@ -24,7 +24,7 @@ public class Start {
 				}
 			} else if (s.equals("2")) {
 				System.out.println("shut down");
-				System.exit(2);
+				System.exit(0);
 
 			} else if (s.equals("3")) {
 				for (Human hum : list) {
@@ -64,7 +64,6 @@ public class Start {
 			for (int i = 1; i <= limit; i++) {
 				for (int j = 0; j < players.size(); j++) {
 					System.out.println("Round " + i);
-					System.out.println("wewnetrzne "+j);
 				System.out.println(
 						players.get(j).getName() + " choose drink from list: V for Vodka, B for beer, W for wine");
 				s = scn.nextLine();

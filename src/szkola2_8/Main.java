@@ -3,7 +3,6 @@ package szkola2_8;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
-import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,9 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
 public class Main extends JFrame {
@@ -64,30 +61,16 @@ public class Main extends JFrame {
 
 	private void initCenterPanel() {
 		centerPanel = new JPanel();
-		/*JList lista = new JList(new MyListModel());
-		JScrollPane scroll = new JScrollPane(lista);
-		centerPanel.add(scroll);*/
 		centerPanel.add(new JLabel("Witaj"));
 		centerPanel.add(new JLabel("przybyszu!"));
 		add(centerPanel, BorderLayout.CENTER);
 	}
 
-	private JPanel czat() {
-		JPanel panel = new JPanel();
-		panel.setLayout(new BorderLayout());
-		TextArea taLow = new TextArea();
-		TextArea dispaly = new TextArea();
-		dispaly.setBackground(new Color(103, 58, 190));
-		panel.add(taLow, BorderLayout.SOUTH);
-		panel.add(dispaly, BorderLayout.CENTER);
-		add(panel, BorderLayout.EAST);
-		return panel;
-	}
 
 	private void initRightPanel() {
 		rightPanel = new JPanel();
 		rightPanel.setLayout(new BorderLayout());
-		ImageIcon image = new ImageIcon("pjatk.png");
+		ImageIcon image = new ImageIcon("Profile.png");
 		JPanel panel2 = new JPanel();
 		panel2.setLayout(new GridLayout(2, 2));
 		rightPanel.setBackground(new Color(103, 58, 183));
@@ -98,7 +81,7 @@ public class Main extends JFrame {
 		JLabel label2 = new JLabel("imie");
 		JLabel label3 = new JLabel("nazwisko");
 		JLabel label4 = new JLabel("krysia");
-		JLabel label5 = new JLabel("w");
+		JLabel label5 = new JLabel("wlewka");
 		panel2.add(label2);
 		panel2.add(label3);
 		panel2.add(label4);
